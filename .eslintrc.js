@@ -93,7 +93,6 @@ module.exports = {
         ignoreReadBeforeAssign: true,
       },
     ],
-    'prettier/prettier': ['error', { 'singleQuote': true, 'semi': false, 'trailingComma': 'all', 'printWidth': 140 }],
     'tsdoc/syntax': 'warn',
     'padding-line-between-statements': [
       'warn',
