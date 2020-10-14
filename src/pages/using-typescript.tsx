@@ -15,7 +15,7 @@ const UsingTypescript: React.FC<PageProps<DataProps>> = ({ data, path }) => (
         <SEO title="Using TypeScript" />
         <p>
             currently on the page:{path}
-            {data.site.buildTime}.
+            {data.site.buildTime}
         </p>
         <p>
             <a href="https://www.gatsbyjs.com/docs/typescript/">documentation about TypeScript</a>
@@ -28,7 +28,7 @@ export default UsingTypescript
 
 export const query = graphql`
     {
-        ..site {
+        site {
             buildTime(formatString: "YYYY-MM-DD hh:mm a z")
         }
     }
