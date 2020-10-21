@@ -3,8 +3,18 @@ import { useStaticQuery, graphql } from 'gatsby'
 
 import Header from './header'
 import './layout.css'
+import 'twin.macro'
+import tw, { styled } from 'twin.macro'
 
 type Props = {}
+
+const Footer = styled.footer`
+    ${tw`mt-8`}
+`
+
+const Container = tw.div`
+    mx-auto my-0 max-w-4xl px-2 pb-4
+`
 
 const Layout: React.FC<Props> = ({ children }) => {
     const data = useStaticQuery(graphql`
@@ -20,24 +30,14 @@ const Layout: React.FC<Props> = ({ children }) => {
     return (
         <>
             <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-            <div
-                style={{
-                    margin: `0 auto`,
-                    maxWidth: 960,
-                    padding: `0 1.0875rem 1.45rem`,
-                }}
-            >
+            <Container>
                 <main>{children}</main>
-                <footer
-                    style={{
-                        marginTop: `2rem`,
-                    }}
-                >
+                <Footer>
                     © {new Date().getFullYear()}, Built with
                     {` `}
                     <a href="https://www.gatsbyjs.com">Gatsby</a>
-                </footer>
-            </div>
+                </Footer>
+            </Container>
         </>
     )
 }
