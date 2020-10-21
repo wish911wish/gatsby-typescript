@@ -15,5 +15,6 @@
         "noEmit": true,
         "skipLibCheck": true,
         "baseUrl": "."
-    }
+    },
+    "files": ["./src/twin.d.ts"],
 }
